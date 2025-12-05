@@ -32,10 +32,6 @@ continue_boot:
     call print_string 
     call print_newline  
 
-    mov si, msg_loading_stage2 - mbr_load_address + mbr_relocate_address
-    call print_string 
-    call print_newline
-
     mov ah, 0x02                    
     mov al, stage2_sectors          
     mov ch, 0                       
@@ -110,10 +106,9 @@ print_newline:
     popa
     ret  
 
-msg_mbr_start: db 'Master Boot Record Started', 0  
-msg_loading_stage2: db 'Loading Stage 2 bootloader...', 0
+msg_mbr_start: db 'Master boot record started', 0  
 msg_stage2_loaded: db 'Stage 2 loaded successfully', 0
-msg_disk_error: db 'Disk read error! Error code: ', 0
+msg_disk_error: db 'error: disk read error', 0
 msg_system_halted: db 'System halted', 0
 
 boot_drive: db 0
