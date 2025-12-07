@@ -19,13 +19,13 @@ gdt_code:
 
 
 gdt_data:
-    dw 0xffff                       ; limit (bits 0-15)       
-    dw 0x0000                       ; base (bits 0-15) 
-    db 0x00                         ; base (bits 16-23)
+    dw 0xffff                              
+    dw 0x0000                        
+    db 0x00                         
     db 10010010b                    ; p=1, dpl=00, s=1, type=0010
                                     ; present, ring 0, data, read/write
-    db 11001111b                    ; g=1, d/b=1, l=0, avl=0, limit=1111   
-    db 0x00                         ; base (bits 24-31)     
+    db 11001111b                       
+    db 0x00                            
 
 gdt_end:
 
