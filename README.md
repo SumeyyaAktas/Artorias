@@ -35,8 +35,8 @@ make run    # Run in QEMU
 ```
 
 ## Resources
-- [OSDev Wiki - Rolling Your Own Bootloader](<https://wiki.osdev.org/Rolling_Your_Own_Bootloader>)
-- [Carnegie Mellon University - Writing a Bootloader from Scratch](<https://www.cs.cmu.edu/~410-s07/p4/p4-boot.pdf>)
+- [Rolling Your Own Bootloader - OSDev Wiki](<https://wiki.osdev.org/Rolling_Your_Own_Bootloader>)
+- [Writing a Bootloader from Scratch - Carnegie Mellon University](<https://www.cs.cmu.edu/~410-s07/p4/p4-boot.pdf>)
 - [Writing a Simple Operating System from Scratch - Nick Blundell](<https://github.com/tpn/pdfs/blob/master/Writing%20a%20Simple%20Operating%20System%20from%20Scratch%20-%20Nick%20Blundell%20-%20Dec%202010.pdf>) (Visit the 'boot sector programming' section)
 
 
