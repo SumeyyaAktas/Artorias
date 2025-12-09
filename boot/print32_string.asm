@@ -53,9 +53,6 @@ print32_newline:
 print32_hex:
     pushad
     
-    mov ebx, hex_prefix_str
-    call print32_string
-    
     mov ecx, 8                      
     mov edi, eax                    
     
@@ -87,9 +84,6 @@ print32_hex:
     
     dec ecx
     jnz .print32_hex_loop
-    
-    mov ebx, space_str
-    call print32_string
     
     popad
     ret

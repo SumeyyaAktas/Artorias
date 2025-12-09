@@ -15,8 +15,7 @@ STAGE2_SRC := $(BOOT_DIR)/stage2.asm
 STAGE2_DEPS := $(BOOT_DIR)/print16_string.asm \
                $(BOOT_DIR)/print32_string.asm \
                $(BOOT_DIR)/gdt.asm \
-               $(BOOT_DIR)/switch_to_pm.asm \
-               $(BOOT_DIR)/pci.asm
+               $(BOOT_DIR)/switch_to_pm.asm 
 
 all: $(DISK_IMG)
 
