@@ -44,12 +44,14 @@ begin_pm:
     
     mov ebx, usb_init_str
     call print32_string
+    call print32_newline
     
     jmp .halt
     
 .no_usb:
     mov ebx, usb_failed_str
     call print32_string
+    call print32_newline
     
 .halt:
     jmp $
