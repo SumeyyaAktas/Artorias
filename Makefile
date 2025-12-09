@@ -33,7 +33,8 @@ $(DISK_IMG): $(MBR_BIN) $(STAGE2_BIN) | $(IMAGE_DIR)
 	@cat $(MBR_BIN) $(STAGE2_BIN) > $@
 
 run: $(DISK_IMG)
-	$(QEMU) -drive format=raw,file=$(DISK_IMG),index=0,media=disk
+	$(QEMU) -drive format=raw,file=$(DISK_IMG),index=0,media=disk \
+		-device ich9-usb-ehci1,id=ehci
 
 clean:
 	@rm -rf $(BUILD_DIR) $(IMAGE_DIR)
