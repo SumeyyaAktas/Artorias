@@ -12,9 +12,9 @@
 
 <sub>Bootloader From Scratch • USB Driver Support</sub>
 
-<p>A two-stage x86 bootloader written in assembly that loads a C kernel and provides USB device enumeration. The bare-metal x86 boot system starts from the master boot record (MBR), loads a second-stage bootloader, transitions to 32-bit protected mode, and executes a C kernel. The bootloader is designed to support USB device detection through EHCI controller initialization.</p>
-
 </div>
+
+<p>A two-stage x86 bootloader written in assembly that loads a C kernel and provides USB device enumeration. The bare-metal x86 boot system starts from the master boot record (MBR), loads a second-stage bootloader, transitions to 32-bit protected mode, and executes a C kernel. The bootloader is designed to support USB device detection through EHCI controller initialization.</p>
 
 ### Table of Contents
 
