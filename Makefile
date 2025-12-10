@@ -47,7 +47,7 @@ CFLAGS := -m32 \
           -O2
 
 LDFLAGS := -m elf_i386 \
-           -T $(KERNEL_DIR)/linker.ld \
+           -T linker.ld \
            -nostdlib
 
 all: $(DISK_IMG)
