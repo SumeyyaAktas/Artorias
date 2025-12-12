@@ -1,7 +1,7 @@
 <div align="center">
-<img src="https://images.unsplash.com/vector-1759145395760-de60a128408d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGJ1bm55fGVufDB8fDB8fHww" width="120" height="120">
+<img src="https://images.unsplash.com/vector-1752217168120-8af69438891c?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="120" height="120">
 
-  # Custom x86 Bootloader
+  # Artorias
 
 </div>
 
@@ -10,11 +10,11 @@
 [![Assembly](https://img.shields.io/badge/x86--64-Assembly-blue)]()
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-<sub>Bootloader From Scratch • USB Driver Support</sub>
+<sub>Two-stage x86 Bootloader • C Kernel • USB Driver Support</sub>
 
 </div>
 
-<p>A two-stage x86 bootloader written in assembly that loads a C kernel and provides USB device enumeration. The bare-metal x86 boot system starts from the master boot record (MBR), loads a second-stage bootloader, transitions to 32-bit protected mode, and executes a C kernel. The bootloader is designed to support USB device detection through EHCI controller initialization.</p>
+<p>The bare-metal x86 boot system starts from the master boot record (MBR), loads a second-stage bootloader, transitions to 32-bit protected mode, and executes a C kernel. The bootloader is designed to support USB device detection through EHCI controller initialization.</p>
 
 ### Table of Contents
 
