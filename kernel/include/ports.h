@@ -1,3 +1,6 @@
+#ifndef PORTS_H
+#define PORTS_H
+
 static inline unsigned char inb(unsigned short port) {
     unsigned char result;
     __asm__("inb %1, %0" : "=a" (result) : "Nd" (port));
@@ -19,3 +22,5 @@ static inline unsigned int inl(unsigned short port) {
 static inline void outl(unsigned short port, unsigned int data) {
     __asm__("outl %0, %1" : : "a" (data), "Nd" (port));
 }
+
+#endif
