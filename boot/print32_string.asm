@@ -1,7 +1,7 @@
 [bits 32]
 
-VIDEO_MEMORY equ 0xb8000       ; vga text mode buffer       
-WHITE_ON_BLACK equ 0x0f            
+VIDEO_MEMORY equ 0xB8000       ; vga text mode buffer       
+WHITE_ON_BLACK equ 0x0F            
 
 print32_string:
     pushad                     ; save all 32-bit registers                

@@ -1,6 +1,6 @@
-%define load_address 0x7c00            
+%define load_address 0x7C00            
 %define relocate_address 0x0600
-%define stage2_address 0x7e00
+%define stage2_address 0x7E00
 %define stage2_sectors 8
 %define sector_size 512
 
@@ -94,4 +94,4 @@ system_halted_str: db 'System halted', 0
 boot_drive: db 0
 
 times 510 - ($ - $$) db 0      ; pad to 510 bytes
-dw 0xaa55                      ; boot signature (bytes 510-511)
+dw 0xAA55                      ; boot signature (bytes 510-511)

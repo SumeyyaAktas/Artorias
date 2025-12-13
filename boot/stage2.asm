@@ -1,4 +1,4 @@
-[org 0x7e00]
+[org 0x7E00]
 [bits 16]
 
 %define KERNEL_OFFSET 0x1000

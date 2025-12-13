@@ -9,7 +9,7 @@ print16_string:
     cmp al, 0                  ; check for null terminator
     je .end_print16_loop       ; exit if end of string
     
-    mov ah, 0x0e               ; print character using bios teletype       
+    mov ah, 0x0E               ; print character using bios teletype       
     mov bh, 0                  ; page number is 0        
     mov bl, 0x07               ; color is light gray on black 
     int 0x10                
@@ -23,10 +23,10 @@ print16_string:
 print16_newline:
     pusha
     
-    mov ah, 0x0e
-    mov al, 0x0d               ; carriage return        
+    mov ah, 0x0E
+    mov al, 0x0D               ; carriage return        
     int 0x10
-    mov al, 0x0a               ; line feed   
+    mov al, 0x0A               ; line feed   
     int 0x10
     
     popa
