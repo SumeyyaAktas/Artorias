@@ -6,8 +6,8 @@
 
 <div align="center">
   
-[![Assembly](https://img.shields.io/badge/x86--64-Assembly-8A0000?style=flat-square)]()
-[![License](https://img.shields.io/badge/License-Apache_2.0-8A0000?style=flat-square)]()
+[![Assembly](https://img.shields.io/badge/x86--64-Assembly-4361EE?style=flat-square)]()
+[![License](https://img.shields.io/badge/License-Apache_2.0-4361EE?style=flat-square)]()
 
 <sub>Two-stage x86 Bootloader • C Kernel • USB Driver Support</sub>
 
