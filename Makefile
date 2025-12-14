@@ -1,5 +1,5 @@
 ASM := nasm
-QEMU := qemu-system-x86_64
+QEMU := qemu-system-x86_64 -device usb-ehci
 
 CC := i686-elf-gcc
 LD := i686-elf-ld
@@ -75,7 +75,7 @@ $(DISK_IMG): $(MBR_BIN) $(STAGE2_BIN) $(KERNEL_BIN) | $(IMAGE_DIR)
 	@cat $(MBR_BIN) $(STAGE2_BIN) $(KERNEL_BIN) > $@
 
 run: $(DISK_IMG)
-	$(QEMU) -drive format=raw,file=$(DISK_IMG),if=floppy -boot a
+	$(QEMU) -drive format=raw,file=$(DISK_IMG),if=floppy -boot a -serial stdio
 
 clean:
 	@rm -rf $(BUILD_DIR) $(IMAGE_DIR)
