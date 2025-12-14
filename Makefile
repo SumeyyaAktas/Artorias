@@ -19,7 +19,9 @@ DISK_IMG := $(IMAGE_DIR)/boot.img
 MBR_SRC := $(BOOT_DIR)/mbr.asm
 STAGE2_SRC := $(BOOT_DIR)/stage2.asm
 KERNEL_ENTRY_SRC := $(KERNEL_DIR)/kernel_entry.asm
-KERNEL_C_SRC := $(wildcard $(KERNEL_SRC_DIR)/*.c)
+KERNEL_C_SRC := \
+    $(wildcard $(KERNEL_SRC_DIR)/*.c) \
+    $(wildcard $(KERNEL_SRC_DIR)/driver/*.c)
 
 KERNEL_ENTRY_OBJ := $(BUILD_DIR)/kernel_entry.o
 KERNEL_C_OBJ := $(patsubst $(KERNEL_SRC_DIR)/%.c,$(BUILD_DIR)/%.o,$(KERNEL_C_SRC))
@@ -59,7 +61,8 @@ $(STAGE2_BIN): $(STAGE2_SRC) $(STAGE2_DEPS) | $(BUILD_DIR)
 $(KERNEL_ENTRY_OBJ): $(KERNEL_ENTRY_SRC) | $(BUILD_DIR) 
 	$(ASM) -f elf32 $< -o $@
 
-$(BUILD_DIR)/%.o: $(KERNEL_SRC_DIR)/%.c | $(BUILD_DIR)
+$(BUILD_DIR)/%.o: $(KERNEL_SRC_DIR)/%.c
+	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(KERNEL_ELF): $(KERNEL_ENTRY_OBJ) $(KERNEL_C_OBJ) | $(BUILD_DIR)
