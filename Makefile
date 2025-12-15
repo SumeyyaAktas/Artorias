@@ -1,5 +1,5 @@
 ASM := nasm
-QEMU := qemu-system-x86_64 -device usb-ehci
+QEMU := qemu-system-x86_64
 
 CC := i686-elf-gcc
 LD := i686-elf-ld
@@ -75,7 +75,10 @@ $(DISK_IMG): $(MBR_BIN) $(STAGE2_BIN) $(KERNEL_BIN) | $(IMAGE_DIR)
 	@cat $(MBR_BIN) $(STAGE2_BIN) $(KERNEL_BIN) > $@
 
 run: $(DISK_IMG)
-	$(QEMU) -drive format=raw,file=$(DISK_IMG),if=floppy -boot a -serial stdio
+	$(QEMU) -drive format=raw,file=$(DISK_IMG),if=floppy -boot a \
+		-device usb-ehci,id=ehci \
+		-device usb-storage,bus=ehci.0,drive=usbstick \
+		-drive id=usbstick,file=/dev/null,if=none,format=raw -serial stdio
 
 clean:
 	@rm -rf $(BUILD_DIR) $(IMAGE_DIR)
