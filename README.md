@@ -19,6 +19,14 @@
 
 <p>Artorias is a bare-metal x86 boot system that starts from the master boot record (MBR), loads a second-stage bootloader, transitions to 32-bit protected mode, and executes a C kernel with minimal USB driver support.</p>
 
+### Table of Contents
+
+- [Requirements](#requirements)
+- [Building](#building)
+- [Limitations](#limitations)
+- [Coming Soon](#coming-soon)
+- [Resources](#resources)
+
 ## Requirements
 - GCC Cross-Compiler (i686-elf-gcc)
 - GNU Make
@@ -37,6 +45,10 @@ make clean  # Clean build artifacts
 - Only supports USB 2.0 high-speed devices
 - Doesn't fetch manufacturer/product name through string descriptors
 - No control transfers
+
+## Coming Soon
+- Documentation
+- Control transfers
 
 ## Resources
 - [Writing a Bootloader from Scratch - Carnegie Mellon University](<https://www.cs.cmu.edu/~410-s07/p4/p4-boot.pdf>)
