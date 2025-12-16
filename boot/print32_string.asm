@@ -1,32 +1,32 @@
 [bits 32]
 
-VIDEO_MEMORY equ 0xB8000       ; vga text mode buffer       
+VIDEO_MEMORY equ 0xB8000       
 WHITE_ON_BLACK equ 0x0F            
 
 print32_string:
-    pushad                     ; save all 32-bit registers                
+    pushad                                
 
-    mov eax, [cursor_pos]      ; load current position offset       
-    mov edx, VIDEO_MEMORY      ; base address of video memory      
-    add edx, eax               ; edx = video memory + offset     
+    mov eax, [cursor_pos]      
+    mov edx, VIDEO_MEMORY     
+    add edx, eax               
 
 .print32_loop:
-    mov al, [ebx]              ; load character from string                  
+    mov al, [ebx]                        
     cmp al, 0                       
     je .end_print32_loop                        
     
     mov ah, WHITE_ON_BLACK          
-    mov [edx], ax              ; write char (al) and color (ah)                
+    mov [edx], ax                     
 
-    add ebx, 1                 ; next character in string           
-    add edx, 2                 ; next position (2 bytes per char)      
+    add ebx, 1                   
+    add edx, 2                      
     
     jmp .print32_loop                       
 
 .end_print32_loop:
-    mov eax, edx               ; current video memory address     
-    sub eax, VIDEO_MEMORY      ; convert to offset from start     
-    mov [cursor_pos], eax      ; save for next print       
+    mov eax, edx               
+    sub eax, VIDEO_MEMORY      
+    mov [cursor_pos], eax       
     
     popad                           
     ret

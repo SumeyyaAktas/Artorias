@@ -2,19 +2,19 @@
 
 print16_string:
     pusha
-    mov si, bx                 ; copy string pointer to si (lodsb uses si)          
+    mov si, bx                  
     
 .print16_loop:
-    lodsb                      ; load byte from si into al, si++               
-    cmp al, 0                  ; check for null terminator
-    je .end_print16_loop       ; exit if end of string
+    lodsb                               
+    cmp al, 0                  
+    je .end_print16_loop       
     
-    mov ah, 0x0E               ; print character using bios teletype       
-    mov bh, 0                  ; page number is 0        
-    mov bl, 0x07               ; color is light gray on black 
+    mov ah, 0x0E                 
+    mov bh, 0                         
+    mov bl, 0x07               
     int 0x10                
     
-    jmp .print16_loop          ; process next character
+    jmp .print16_loop          
 
 .end_print16_loop:
     popa
@@ -24,9 +24,9 @@ print16_newline:
     pusha
     
     mov ah, 0x0E
-    mov al, 0x0D               ; carriage return        
+    mov al, 0x0D                   
     int 0x10
-    mov al, 0x0A               ; line feed   
+    mov al, 0x0A              
     int 0x10
     
     popa
