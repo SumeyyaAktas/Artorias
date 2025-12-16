@@ -1,7 +1,7 @@
 #include "driver/pci.h"
 #include <kernel.h>
 #include "driver/serial.h"
-#include <kernel.h>
+#include "driver/vga.h"
 
 void clear_screen(void) 
 {
@@ -16,6 +16,7 @@ void clear_screen(void)
 
 void kernel_main(void) 
 {
+    vga_init();
     clear_screen();
     serial_init();
 
