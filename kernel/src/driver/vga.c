@@ -7,7 +7,8 @@ uint8_t vga_attr;
 int vga_row;
 int vga_col;
 
-void vga_init(void) {
+void vga_init(void) 
+{
     vga_row = 0;
     vga_col = 0;
     vga_attr = VGA_COLOR(WHITE, BLACK);
