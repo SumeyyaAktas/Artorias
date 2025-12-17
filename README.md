@@ -24,7 +24,6 @@
 - [Requirements](#requirements)
 - [Building](#building)
 - [Limitations](#limitations)
-- [Coming Soon](#coming-soon)
 - [Resources](#resources)
 
 ## Requirements
@@ -45,10 +44,6 @@ make clean  # Clean build artifacts
 - Only supports USB 2.0 high-speed devices
 - Doesn't fetch manufacturer/product name through string descriptors
 - No control transfers
-
-## Coming Soon
-- Documentation
-- Control transfers
 
 ## Resources
 - [Writing a Bootloader from Scratch - Carnegie Mellon University](<https://www.cs.cmu.edu/~410-s07/p4/p4-boot.pdf>)
