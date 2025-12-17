@@ -7,7 +7,7 @@
 <div align="center">
 
 <div align="center">
-<img src="assets/QEMU_SUCCESS_WINDOW.png" width="720" height="430">
+<img src="assets/QEMU_SUCCESS_WINDOW.png" height="720" width="420">
 </div>
 
 <br>
