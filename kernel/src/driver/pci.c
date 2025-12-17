@@ -150,7 +150,7 @@ void pci_enumerate(void)
 { 
     vga_print_color("                            Welcome to Artorias!", LIGHT_MAGENTA, BLACK);
     vga_print("\n");
-    vga_print_color("           A Custom x86 Bootloader with Minimal USB Driver Support", LIGHT_MAGENTA, BLACK);
+    vga_print_color("     A Custom x86 Bootloader with Minimal EHCI (USB 2.0) Controller Support", LIGHT_MAGENTA, BLACK);
     vga_print("\n");
     vga_print("\n");
 
