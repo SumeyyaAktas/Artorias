@@ -79,6 +79,24 @@ run: $(DISK_IMG)
 		-device usb-storage,bus=ehci.0,drive=usbstick \
 		-drive id=usbstick,file=/dev/null,if=none,format=raw -serial stdio
 
+run-mouse: $(DISK_IMG)
+	$(QEMU) \
+		-m 512M \
+		-drive format=raw,file=$(DISK_IMG),if=ide \
+		-device usb-ehci,id=ehci \
+		-device usb-mouse,bus=ehci.0 \
+		-serial stdio \
+		-no-reboot
+
+run-kbd: $(DISK_IMG)
+	$(QEMU) \
+		-m 512M \
+		-drive format=raw,file=$(DISK_IMG),if=ide \
+		-device usb-ehci,id=ehci \
+		-device usb-kbd,bus=ehci.0 \
+		-serial stdio \
+		-no-reboot
+
 clean:
 	@rm -rf $(BUILD_DIR) $(IMAGE_DIR)
 
