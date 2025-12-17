@@ -14,11 +14,6 @@
 #define PCI_SUBCLASS_USB 0x03
 
 #define PCI_BAR0 0x10
-#define PCI_BAR1 0x14
-#define PCI_BAR2 0x18
-#define PCI_BAR3 0x1C
-#define PCI_BAR4 0x20
-#define PCI_BAR5 0x24
 
 #define EHCI_CAPLENGTH 0x00
 #define EHCI_HCSPARAMS 0x04
