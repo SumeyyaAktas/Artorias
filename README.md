@@ -14,6 +14,12 @@
 
 [![Assembly](https://img.shields.io/badge/x86--64-Assembly-b9375e?style=flat-square)]()
 [![License](https://img.shields.io/badge/License-Apache_2.0-b9375e?style=flat-square)]()
+
+<p>
+  
+_IMPORTANT: Control transfers (device descriptors and string descriptors) are under active development._
+
+</p>
   
 </div>
 
@@ -57,7 +63,6 @@ make clean  # Clean build artifacts
 - This project implements an EHCI (Enhanced Host Controller Interface) driver, which only handles USB 2.0 high-speed (480 Mbps) devices.
 Low-speed (1.5 Mbps) and full-speed (12 Mbps) devices require companion controllers (UHCI/OHCI) and port handoff logic, which are not implemented. USB 3.x (xHCI) devices are also unsupported.
 - The driver does not issue additional control transfers to retrieve string descriptors (such as manufacturer name, product name, or serial number). As a result, devices cannot be identified by human-readable names and are only detected at a structural level.
-- The driver cannot guarantee reliable control transfer completion due to limitations in hardware testing and QEMU EHCI emulation, meaning device enumeration beyond basic detection is incomplete.
 
 ## Resources
 - [Writing a Bootloader from Scratch - Carnegie Mellon University](<https://www.cs.cmu.edu/~410-s07/p4/p4-boot.pdf>)
