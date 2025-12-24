@@ -71,9 +71,7 @@ void pci_check_device(uint8_t bus, uint8_t slot, uint8_t func)
 
 void pci_enumerate(void)
 { 
-    vga_print_color("                            Welcome to Artorias!", LIGHT_MAGENTA, BLACK);
-    vga_print("\n");
-    vga_print("\n");
+    vga_print_color("                            Welcome to Artorias!\n\n", LIGHT_MAGENTA, BLACK);
 
     for (uint16_t bus = 0; bus < 256; bus++)
     {
