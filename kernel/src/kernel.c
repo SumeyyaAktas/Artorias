@@ -3,21 +3,18 @@
 #include "driver/serial.h"
 #include "driver/vga.h"
 
-void clear_screen(void) 
+void hcf(void)
 {
-    char* video = (char*)VIDEO_MEMORY;
-    
-    for (int i = 0; i < 80 * 25 * 2; i += 2) 
+    for (;;)
     {
-        video[i] = ' ';
-        video[i + 1] = WHITE_ON_BLACK;
+        asm("hlt");
     }
 }
 
 void kernel_main(void) 
 {
-    vga_init();
     clear_screen();
+    vga_init();
     serial_init();
 
     serial_print("\n");
@@ -29,8 +26,5 @@ void kernel_main(void)
 
     serial_print("PCI scan complete\n");
 
-    while (1) 
-    {
-        __asm__ __volatile__("hlt");
-    }
+    hcf();
 }
