@@ -12,8 +12,8 @@
 
 <br>
 
-[![Assembly](https://img.shields.io/badge/x86--64-Assembly-023e8a?style=flat-square)]()
-[![License](https://img.shields.io/badge/License-Apache_2.0-023e8a?style=flat-square)]()
+[![Assembly](https://img.shields.io/badge/x86--64-Assembly-0466c8?style=flat-square)]()
+[![License](https://img.shields.io/badge/License-Apache_2.0-0466c8?style=flat-square)]()
 
 <p>
   
