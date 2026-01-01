@@ -19,9 +19,9 @@ print16_string:
     
     ; This interrupt may modify some registers (like bp) 
     ; on certain BIOS implementations, but 'pusha' guards our state.
-    mov ah, 0x0E             ; BIOS function - teletype output          
+    mov ah, 0x0E             ; BIOS function - Teletype output          
     mov bh, 0                ; Page number (0 is standard for bootloaders)         
-    mov bl, 0x07             ; Attribute - light grey on black background 
+    mov bl, 0x07             ; Attribute - Light grey on black background 
     int 0x10                 ; Call video BIOS
     
     jmp .print16_loop          
@@ -36,9 +36,9 @@ print16_newline:
     pusha
     
     mov ah, 0x0E
-    mov al, 0x0D             ; ASCII - carriage return (\r)            
+    mov al, 0x0D             ; ASCII - Carriage return (\r)            
     int 0x10
-    mov al, 0x0A             ; ASCII - line feed (\n)  
+    mov al, 0x0A             ; ASCII - Line feed (\n)  
     int 0x10
     
     popa

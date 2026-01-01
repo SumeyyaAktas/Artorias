@@ -18,9 +18,9 @@ gdt_null:
 ; This is the code segment descriptor where 0x08 is the first entry 
 ; after null (8 bytes), used for code segment register.
 gdt_code:
-    dw 0xFFFF           ; Limit - sets bits 0-15 of the segment size                                           
-    dw 0x0000           ; Base - bits 0-15 of the starting address (0x0)                     
-    db 0x00             ; Base - bits 16-23                     
+    dw 0xFFFF           ; Limit - Sets bits 0-15 of the segment size                                           
+    dw 0x0000           ; Base - Bits 0-15 of the starting address (0x0)                     
+    db 0x00             ; Base - Bits 16-23                     
     
     
     ; This is the access byte. Ring 0 is required for kernel-level EHCI/hardware access.
@@ -33,7 +33,7 @@ gdt_code:
     ; | 1111 (Limit bits 16-19)                                
     db 11001111B                    
                                     
-    db 0x00             ; Base - bits 24-31                       
+    db 0x00             ; Base - Bits 24-31                       
 
 
 ; This is the data segment descriptor where 0x10 is 
