@@ -19,7 +19,16 @@ void pit_wait(uint32_t ms)
         // The PIT channel counters are only 16 bits wide (max 65535).
         // To wait for periods longer than ~55ms, we must break the wait into 
         // smaller chunks that fit into the hardware registers.
-        uint16_t current_chunk = (total_ticks > 0xFFFF) ? 0xFFFF : (uint16_t)total_ticks;
+        uint16_t current_chunk;
+
+        if (total_ticks > 0xFFFF) 
+        {
+            current_chunk = 0xFFFF;
+        } 
+        else 
+        {
+            current_chunk = (uint16_t) total_ticks;
+        }
 
         /**
          * PIT command byte: 0x34 (00 11 010 0)
