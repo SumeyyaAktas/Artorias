@@ -4,10 +4,9 @@
   
 </div>
 
-<br>
-
 <div align="center">
 
+### EHCI (USB 2.0) Controller
 [![Assembly](https://img.shields.io/badge/EHCI-USB--2.0-0466c8?style=flat-square)]()
 [![License](https://img.shields.io/badge/License-Apache_2.0-0466c8?style=flat-square)]()
   
